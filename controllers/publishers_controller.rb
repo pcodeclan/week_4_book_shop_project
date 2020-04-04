@@ -25,8 +25,8 @@ end
 #SHOW
 get '/publishers/:id' do
   id = params['id'].to_i
-    @pubishers = Publisher.find_by_id(id)
-    erb(:show)
+  @publisher = Publisher.find_by_id(id)
+  erb(:show)
 end
 
 # DELETE

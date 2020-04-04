@@ -1,5 +1,5 @@
 DROP TABLE books;
-DROP TABLE pubishers;
+DROP TABLE publishers;
 
 CREATE TABLE publishers (
   id SERIAL PRIMARY KEY,
