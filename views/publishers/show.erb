@@ -1,0 +1,10 @@
+<p>Name: <%=@publishers.name()%> </p>
+<p>Active: <%=@publishers.active()%></p>
+
+<form action="/publishers/<%=@publishers.id%>/delete" method="POST">
+  <button type="submit">Delete Publisher</button>
+</form>
+
+<form action="/publisher/<%=@publishers.id%>/edit">
+  <button type="submit">Edit</button>
+</form>

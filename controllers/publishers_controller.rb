@@ -7,12 +7,13 @@ also_reload( '../models/*' ) #If you make any changes, this will automatically l
 #INDEX
 get '/publishers' do
   @publishers = Publisher.all()
+  erb(:"publishers/index")
 end
 
 #NEW
 get '/publishers/new' do
   @publishers = Publisher.all()
-  erb(:new)
+  erb(:"publishers/new")
 end
 
 #CREATE
@@ -21,12 +22,12 @@ post '/publishers' do
   new_publisher.save()
   redirect('/publishers')
 end
-
+ 
 #SHOW
 get '/publishers/:id' do
   id = params['id'].to_i
-  @publisher = Publisher.find_by_id(id)
-  erb(:show)
+  @publishers = Publisher.find_by_id(id)
+  erb(:"/publishers/show")
 end
 
 # DELETE
