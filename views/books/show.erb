@@ -4,7 +4,7 @@
 <td>Selling Price: <%=@books.selling_price%></td>
 <td>Stock Level: <%=@books.stock_level%></td>
 <td>Markup: <%=@books.calc_markup%></td>
-<td>Stock Condition: <%=@books.check_stock_condition%></td>
+
 
 <form action="/books/<%=@books.id%>/delete" method="POST">
   <button type="submit">Delete Book</button>

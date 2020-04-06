@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all') if development?
 
 require_relative('../models/books')
+require_relative('../models/publishers')
 also_reload( '../models/*' ) #If you make any changes, this will automatically load the new changes without you having to restart the server
 
 #INDEX
@@ -11,7 +12,7 @@ get '/books' do
 end
 
 #NEW
-get 'books/new' do
+get '/books/new' do
   @books = Book.all()
   erb(:"books/new")
 end

@@ -55,7 +55,7 @@ book3.save()
 
 book4 = Book.new({
   "title" => "Smooching for Dummies",
-  "genre" => "Fiction",
+  "genre" => "Non-Fiction",
   "cost_price" => "4.99",
   "selling_price" => "15.99",
   "stock_level" => "0",

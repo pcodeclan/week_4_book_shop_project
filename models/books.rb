@@ -67,7 +67,7 @@ class Book
   end
 
   #CHECK STOCK CONDITION
-  def check_stock_condition(all_books)
+  def check_stock_condition()
     all_books = self.all()
     if @stock_level <= 3
       stock_condition = "Low"
@@ -80,9 +80,8 @@ class Book
   end
 
   #CALCULATE MARKUP
-  def calc_markup(book)
-    book = self.all()
-    @markup = @selling_price - @cost_price
+  def calc_markup()
+    return @selling_price - @cost_price
   end
 
 end
