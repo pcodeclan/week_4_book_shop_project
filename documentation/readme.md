@@ -31,3 +31,5 @@ V 1.36 - Wrote code for books_controller.rb, books/index.erb, new.erb, show.erb.
 V 1.37 - Added “genre” to books table and associated methods. Created books entries in seeds.rb
 
 V 1.38 - Fixed the calculate markup method within books.rb. And implemented it successfully in the view.
+
+V 1.39 - Fixed check stock condition method in books.rb. Added .round function to markup.

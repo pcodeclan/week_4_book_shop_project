@@ -1,0 +1,16 @@
+<h2>Edit Book</h2>
+<p>Title: <%=@books.title()%> </p>
+<p>Genre: <%=@books.genre()%></p>
+<td>Cost Price: <%=@books.cost_price%></td>
+<td>Selling Price: <%=@books.selling_price%></td>
+<td>Stock Level: <%=@books.stock_level%></td>
+<td>Stock Condition: <%=@books.check_stock_condition%></td>
+<td>Markup: <%=@books.calc_markup%></td>
+
+<form action="/books/<%=@books.id%>" method="POST">
+  <button type="submit">Submit</button>
+</form>
+
+<form action="/books/<%=@books.id%>/delete" method="POST">
+  <button type="submit">Delete Book</button>
+</form>

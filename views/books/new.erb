@@ -3,7 +3,13 @@
   <input type="text" id="title" name="title"><br>
 
   <label for="genre">Genre: </label><br>
-  <input type="text" id="genre" name="genre"><br>
+  <select name="genre" id="genre">
+    <option value="Fiction">Fiction</option>
+    <option value="Non-Fiction">Non-Fiction</option>
+    <option value="Erotica">Erotica</option>
+    <option value="Sci-Fiction">Sci-Fiction</option>
+    <option value="Reference">Reference</option>
+  </select><br>
 
   <label for="cost_price">Cost Price: </label>
   <input type="text" id="cost_price" name="cost_price">
@@ -11,17 +17,16 @@
   <label for="selling_price">Selling Price: </label>
   <input type="text" id="selling_price" name="selling_price">
 
-  <label for="stock_level">Stock Level: </label>
-  <input type="text" id="stock_level" name="stock_level">
+  <label for="stock_level">Stock Level: (between 0 and 99)</label>
+  <input type="number" id="stock_level" name="stock_level" min="0" max="99">
 
-  <label for="markup">Markup: </label>
-  <input type="text" id="markup" name="markup">
+  <label for="publisher_id">Publisher Name: </label><br>
+  <select name="publisher_id" id="genre">
+    <% for publisher in @publishers %>
+    <option value="<%=publisher.id%>">
+      <%=publisher.name%></option>
+      <% end %>
+    </select><br>
 
-  <label for="publisher_id">Publisher ID: </label>
-  <input type="text" id="markup" name="markup">
-
-  <label for="publisher_name">Publisher Name: </label>
-  <input type="text" id="publisher_name" name="publisher_name">
-
-  <input type="submit" value="submit">
-</form>
+    <input type="submit" value="submit">
+  </form>

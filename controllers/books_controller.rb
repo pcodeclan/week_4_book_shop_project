@@ -8,12 +8,14 @@ also_reload( '../models/*' ) #If you make any changes, this will automatically l
 #INDEX
 get '/books' do
   @books = Book.all()
+  @publishers = Publisher.all()
   erb(:"books/index")
 end
 
 #NEW
 get '/books/new' do
   @books = Book.all()
+  @publishers = Publisher.all()
   erb(:"books/new")
 end
 
@@ -39,13 +41,13 @@ post '/books/:id/delete' do
 end
 
 #EDIT
-get 'books/:id/edit' do
+get '/books/:id/edit' do
   id = params['id'].to_i
   @books = Book.find_by_id(id)
   erb(:"/books/edit")
 end
 
-post 'books/:id' do
+post '/books/:id' do
   edited_book = Book.new(params)
   edited_book.update_by_id
   redirect('/books/' + params['id'])
