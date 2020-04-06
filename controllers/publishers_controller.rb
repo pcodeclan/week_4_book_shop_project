@@ -16,18 +16,18 @@ get '/publishers/new' do
   erb(:"publishers/new")
 end
 
-#CREATE
-post '/publishers' do
-  new_publisher = Publisher.new(params)
-  new_publisher.save()
-  redirect('/publishers')
-end
-
 #SHOW
 get '/publishers/:id' do
   id = params['id'].to_i
   @publishers = Publisher.find_by_id(id)
   erb(:"/publishers/show")
+end
+
+#CREATE
+post '/publishers' do
+  new_publisher = Publisher.new(params)
+  new_publisher.save()
+  redirect('/publishers')
 end
 
 # DELETE

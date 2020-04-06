@@ -1,7 +1,7 @@
 <h2>Edit Publisher</h2>
 <p>Name: <%=@publishers.name()%> </p>
 
-<form action="/publisher/<%=@publishers.id%>">
+<form action="/publishers/<%=@publishers.id%>" method="POST">
 <p>Active: <%=@publishers.active()%></p>
 
 <select name="active" id="active">

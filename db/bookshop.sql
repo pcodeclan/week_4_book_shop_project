@@ -3,7 +3,7 @@ DROP TABLE publishers;
 
 CREATE TABLE publishers (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(255) not null,
+  name VARCHAR(255),
   active BOOLEAN
 );
 

@@ -45,8 +45,8 @@ class Publisher
   end
 
   #UPDATE
-  def self.update_by_id()
-      sql = "UPDATE publishers SET (active) = ($1) WHERE id= $2"
+  def update_by_id()
+      sql = "UPDATE publishers SET active = $1 WHERE id= $2"
       values = [@active ,@id]
       SqlRunner.run(sql,values)
   end
