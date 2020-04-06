@@ -22,7 +22,7 @@ post '/publishers' do
   new_publisher.save()
   redirect('/publishers')
 end
- 
+
 #SHOW
 get '/publishers/:id' do
   id = params['id'].to_i
@@ -36,3 +36,17 @@ post '/publishers/:id/delete' do
   Publisher.delete_by_id(id)
   redirect('/publishers')
 end
+
+#EDIT
+get '/publishers/:id/edit' do
+  id = params['id'].to_i()
+  @publishers = Publisher.find_by_id(id)
+  erb(:"/publishers/edit")
+end
+
+post '/publishers/:id' do
+  edited_publisher = Publisher.new(params)
+  edited_publisher.update_by_id
+  redirect('/publishers/' + params['id'])
+end
+#END EDIT
