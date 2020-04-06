@@ -10,8 +10,9 @@ CREATE TABLE publishers (
 CREATE TABLE books (
   id SERIAL PRIMARY KEY,
   title VARCHAR(255),
-  publisher_id INT REFERENCES publishers(id),
+  genre VARCHAR(255),
   cost_price FLOAT,
   selling_price FLOAT,
-  stock_level INT
+  stock_level INT,
+  publisher_id INT REFERENCES publishers(id)
 );

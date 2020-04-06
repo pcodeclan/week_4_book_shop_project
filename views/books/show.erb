@@ -1,9 +1,10 @@
 <p>Title: <%=@books.title()%> </p>
 <p>Genre: <%=@books.genre()%></p>
-<td>Cost Price: <%=book.cost_price%></td>
-<td>Selling Price: <%=book.selling_price%></td>
-<td>Stock Level: <%=book.stock_level%></td>
-<td>Stock Condition: <%=book.stock_condition%></td>
+<td>Cost Price: <%=@books.cost_price%></td>
+<td>Selling Price: <%=@books.selling_price%></td>
+<td>Stock Level: <%=@books.stock_level%></td>
+<td>Markup: <%=@books.calc_markup%></td>
+<td>Stock Condition: <%=@books.check_stock_condition%></td>
 
 <form action="/books/<%=@books.id%>/delete" method="POST">
   <button type="submit">Delete Book</button>
