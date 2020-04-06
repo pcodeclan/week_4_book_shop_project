@@ -12,6 +12,7 @@ class Book
     @cost_price = options['cost_price'].to_f
     @selling_price = options['selling_price'].to_f
     @stock_level = options['stock_level'].to_f
+    @stock_condition = options['stock_condition']
   end
 
   #CREATE
@@ -57,10 +58,29 @@ class Book
   end
 
   #UPDATE
-  def self.update_by_id()
-      sql = "UPDATE books SET (active) = ($1, $2, $3, $4, $5) WHERE id= $6"
-      values = [@title, @publisher_id, @cost_price, @selling_price, @stock_level, @id]
-      SqlRunner.run(sql,values)
+  def update_by_id()
+    sql = "UPDATE books SET (active) = ($1, $2, $3, $4, $5) WHERE id= $6"
+    values = [@title, @publisher_id, @cost_price, @selling_price, @stock_level, @id]
+    SqlRunner.run(sql,values)
+  end
+
+  #CHECK STOCK CONDITION
+  def check_stock_condition(all_books)
+    all_books = self.all()
+    if @stock_level <= 3
+      stock_condition = "Low"
+    elsif @stock_level == 0
+      stock_condition = "Out Of Stock"
+    else
+      stock_condition = "In Stock"
+    end
+    @stock_condition = stock_condition
+  end
+
+  #CALCULATE MARKUP
+  def calc_markup(book)
+    book = self.all()
+    @markup = @selling_price - @cost_price
   end
 
 end
