@@ -1,6 +1,7 @@
 <h1>Books</h1>
 
 <table>
+  <thead>
   <tr>
     <th>Book ID</th>
     <th>Title</th>
@@ -14,8 +15,9 @@
     <th>Publisher Name</th>
     <th>Publisher Active</th>
   </tr>
-
+  </thead>
   <% for book in @books %>
+  <tbody>
   <tr>
     <td><%=book.id%></td>
     <td> <%=book.title%></td>
@@ -30,6 +32,7 @@
     <td><%=Publisher.find_by_id(book.publisher_id).active%></td>
     <td><a href="/books/<%=book.id%>/edit">Edit</a></td>
   </tr>
+  </tbody>
   <% end %>
 </table>
 

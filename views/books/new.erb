@@ -26,7 +26,8 @@
     <% for publisher in @publishers %>
     <% if publisher.active == "t" %>
     <option value="<%=publisher.id%>">
-      <%=publisher.name%></option>
+      <%=publisher.name%>
+    </option>
       <% end %>
       <% end %>
     </select><br>
