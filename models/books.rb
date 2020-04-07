@@ -58,11 +58,18 @@ class Book
     sql = "DELETE FROM books"
     SqlRunner.run(sql)
   end
+  
+  #DELETE ONE LINE
+  def self.delete_by_id(id)
+    sql = "DELETE FROM books WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql,values)
+  end
 
   #UPDATE
   def update_by_id()
-    sql = "UPDATE books SET (active) = ($1, $2, $3, $4, $5, $6) WHERE id= $7"
-    values = [@title, @genre, @cost_price, @selling_price, @stock_level, @publisher_id, @id]
+    sql = "UPDATE books SET (cost_price, selling_price, stock_level) = ($1, $2, $3) WHERE id= $4"
+    values = [@cost_price, @selling_price, @stock_level, @id]
     SqlRunner.run(sql,values)
   end
 

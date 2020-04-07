@@ -1,13 +1,19 @@
 <h2>Edit Book</h2>
-<p>Title: <%=@books.title()%> </p>
-<p>Genre: <%=@books.genre()%></p>
-<td>Cost Price: <%=@books.cost_price%></td>
-<td>Selling Price: <%=@books.selling_price%></td>
-<td>Stock Level: <%=@books.stock_level%></td>
-<td>Stock Condition: <%=@books.check_stock_condition%></td>
-<td>Markup: <%=@books.calc_markup%></td>
 
 <form action="/books/<%=@books.id%>" method="POST">
+
+<p>Title: <%=@books.title()%> </p>
+<p>Genre: <%=@books.genre()%></p>
+<p>Cost Price: £<%=@books.cost_price%></p>
+<input type="number" id="cost_price" name="cost_price" placeholder="<%=@books.cost_price%>" step="0.01" min="0.00" max="999.00">
+<p>Selling Price: £<%=@books.selling_price%></p>
+<input type="number" id="selling_price" name="selling_price" placeholder="<%=@books.selling_price%>"step="0.01" min="0.00" max="999.00">
+<p>Stock Level: <%=@books.stock_level%></p>
+<input type="number" id="stock_level" name="stock_level" min="0" max="99">
+<p>Stock Condition: <%=@books.check_stock_condition%></p>
+<p>Markup: £<%=@books.calc_markup%></p>
+
+
   <button type="submit">Submit</button>
 </form>
 
