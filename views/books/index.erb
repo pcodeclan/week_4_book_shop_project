@@ -12,6 +12,7 @@
     <th>Markup</th>
     <th>Publisher ID</th>
     <th>Publisher Name</th>
+    <th>Publisher Active</th>
   </tr>
 
   <% for book in @books %>
@@ -26,6 +27,7 @@
     <td>£<%=book.calc_markup%></td>
     <td><%=book.publisher_id%></td>
     <td><%=Publisher.find_by_id(book.publisher_id).name%></td>
+    <td><%=Publisher.find_by_id(book.publisher_id).active%></td>
     <td><a href="/books/<%=book.id%>/edit">Edit</a></td>
   </tr>
   <% end %>

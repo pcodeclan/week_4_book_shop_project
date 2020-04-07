@@ -1,3 +1,17 @@
+About:
+Congratulations for purchasing the Bookshop Inventory Manager.
+You can create, delete and update publishers and books and manage your stock and inventory.
+Publishers can be activated or deactivated and when creating new books you will not see it.
+
+============================
+Instructions:
+
+1) Open Terminal
+2) Navigate to Directory
+3) Create database. Type: CREATEDB bookshop
+3) Run bookshop.sql. Type: psql -d bookshop -f db/bookshop.sql
+4) Run seeds file. Type ruby db/seeds.db
+5) Start program. Type ruby console.rb
 
 ============================
 Version History:
@@ -33,3 +47,9 @@ V 1.37 - Added “genre” to books table and associated methods. Created books 
 V 1.38 - Fixed the calculate markup method within books.rb. And implemented it successfully in the view.
 
 V 1.39 - Fixed check stock condition method in books.rb. Added .round function to markup.
+
+V 1.40 - Added code to books/edit.rb. Added edit button to books/index and books/show.
+
+V 1.41 - Fixed Delete on books. Added £ signs to any currency boxes.
+
+V 1.42 - When creating a new book, inactive publishers are not shown.
