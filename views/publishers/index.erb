@@ -6,14 +6,16 @@
     <th>Publisher ID</th>
     <th>Name</th>
     <th>Active</th>
+    <th></th>
   </tr>
   </thead>
   <% for publisher in @publishers %>
   <tbody>
   <tr>
     <td><%=publisher.id%></td>
-    <td> <%=publisher.name%> <a href="/publishers/<%=publisher.id%>">Edit</a></td>
+    <td> <%=publisher.name%></td>
     <td><%=publisher.active%></td>
+    <td><a href="/publishers/<%=publisher.id%>">Edit</a></td>
   </tr>
   </tbody>
   <% end %>
