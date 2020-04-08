@@ -1,17 +1,25 @@
 About:
-Congratulations for purchasing the Bookshop Inventory Manager.
+Congratulations for purchasing the Bookshop Inventory Manager!
+You're just about to embark of a quantitative literary adventure of a lifetime!
 You can create, delete and update publishers and books and manage your stock and inventory.
 Publishers can be activated or deactivated and when creating new books you will not see it.
+
+This program uses Ruby, PSQL, the Sinatra framework.
 
 ============================
 Instructions:
 
+* This program was made and run in MacOS. Other OS may differ.
+* Make sure your system has PSQL and Sinatra installed. For more information, see (http://sinatrarb.com/)
+
 1) Open Terminal
 2) Navigate to Directory
-3) Create database. Type: CREATEDB bookshop
-3) Run bookshop.sql. Type: psql -d bookshop -f db/bookshop.sql
-4) Run seeds file. Type ruby db/seeds.db
-5) Start program. Type ruby console.rb
+3) Create database. Type: "CREATEDB bookshop"
+3) Run bookshop.sql to set the database structure. Type: "psql -d bookshop -f db/bookshop.sql"
+4) Run seeds file to populate the database. Type "ruby db/seeds.db"
+5) Start program. Type "ruby console.rb"
+6) When local server is running, In browser, navigate to: "localhost:4567"
+7) To exit, press "CTRL C" in terminal.
 
 ============================
 Version History:
@@ -53,3 +61,11 @@ V 1.40 - Added code to books/edit.rb. Added edit button to books/index and books
 V 1.41 - Fixed Delete on books. Added £ signs to any currency boxes.
 
 V 1.42 - When creating a new book, inactive publishers are not shown.
+
+V 1.43 - Added more styling to tables.
+
+V 1.44 - Added Image to site.
+
+V 1.45 - Updated Readme.md. Added documents to /documentation
+
+V 1.46 - Implemented sort function into both books and publisher lists.
